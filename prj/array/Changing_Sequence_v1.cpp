@@ -5,17 +5,22 @@ using namespace std;
 int ChangingSequence(int arr[], int arrLength) {
 
     // code goes here  
+    bool is_increasing = false;
     int inc_break = 0;
+
+    bool is_decreasing = false;
     int dec_break = 0;
 
     // Test increasing
+    int prev_val = arr[0];
     int i = 1;
     for (; i < arrLength; i++)
     {
-        if (arr[i] <= arr[i-1])
+        if (arr[i] <= prev_val)
         {
             break;
         }
+        prev_val = arr[i];
     }
     if (i == arrLength)
     {
@@ -24,17 +29,19 @@ int ChangingSequence(int arr[], int arrLength) {
     }
     else
     {
-        inc_break = i-1;
+        inc_break = i - 1;
     }
 
     // Test decreasing
+    prev_val = arr[0];
     i = 1;
     for (; i < arrLength; i++)
     {
-        if (arr[i] >= arr[i-1])
+        if (arr[i] >= prev_val)
         {
             break;
         }
+        prev_val = arr[i];
     }
     if (i == arrLength)
     {
@@ -43,7 +50,7 @@ int ChangingSequence(int arr[], int arrLength) {
     }
     else
     {
-        dec_break = i-1;
+        dec_break = i - 1;
     }
 
     if (inc_break > dec_break)
@@ -52,17 +59,3 @@ int ChangingSequence(int arr[], int arrLength) {
         return dec_break;
 }
 
-
-int main(void) {
-
-    // keep this function call here
-    /* Note: In C++ you first have to initialize an array and set
-       it equal to the stdin to test your code with arrays. */
-
-    //int A[] = coderbyteInternalStdinFunction(stdin);
-    int A[] = { 0, 1,2,3,4,5,6 };
-    int arrLength = sizeof(A) / sizeof(*A);
-    cout << ChangingSequence(A, arrLength);
-    return 0;
-
-}

@@ -13,10 +13,16 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="array">
+      <UniqueIdentifier>{39d40d57-2b0a-4433-aad0-8e5d0988efa0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Coder_Byte.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="array\Changing_Sequence.cpp">
+      <Filter>array</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
