@@ -22,6 +22,10 @@ int ChangingSequence(int arr[], int arrLength) {
         // increasing sequence
         return -1;
     }
+    else if (i > 1) // if decreasing seq then i should be 1.
+    {
+        return i - 1;
+    }
     else
     {
         inc_break = i-1;
